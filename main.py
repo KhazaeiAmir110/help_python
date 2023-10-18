@@ -1,34 +1,31 @@
-from multiprocessing import Process , current_process
+from multiprocessing import Process
 import time
-import os
 
 start = time.perf_counter()
-def show(name):
+def show(name, delay):
     print(f'Starting {name} ...')
-    time.sleep(1)
-    print(current_process())
+    time.sleep(delay)
     print(f'Ending {name} ...')
 
-def show_2(name):
-    print('first : ' + name)
-    print('id : ' + str(os.getpid()))
-    print('parent id : ' + str(os.getppid()))
-
-p1 = Process(target=show,name='process_1', args=('One',))
-p2 = Process(target=show,name='process_2', args=('Two',))
-
-p3 = Process(target=show_2,name='process_3', args=('One',))
+class ProcessClass(Process):
+    def __init__(self, name, delay):
+        super().__init__()
+        self.name = name
+        self.delay = delay
+    def run(self):
+        show(self.name, self.delay)
 
 end = time.perf_counter()
+def main():
+    p1 = ProcessClass('name', 1)
+    p2= ProcessClass('amir', 2)
 
-
-
-if __name__ == '__main__':
     p1.start()
     p2.start()
-    print('live p1 : ' + str(p1.is_alive()))
     p1.join()
     p2.join()
     print(end - start)
-    print('--------------------------')
-    p3.start()
+
+
+if __name__ == '__main__':
+    main()
