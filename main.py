@@ -1,6 +1,6 @@
 from multiprocessing import Process
 import time
-import sys
+
 
 start = time.perf_counter()
 def show(name):
@@ -10,13 +10,26 @@ def show(name):
 
 end = time.perf_counter()
 def main():
-    p1 = Process(target=show, args=('One',), daemon=True)
-    p2 = Process(target=show, args=('Two',))
+    process_1 = Process(target=show, args=('One',))
+    process_2 = Process(target=show, args=('Two',))
 
-    p1.start()
-    p2.start()
+    process_1.start()
+    process_2.start()
+
+    print('live process 1 : ' + str(process_1.is_alive()))
+    print('live process 2 : ' + str(process_2.is_alive()))
+
+    process_1.kill()
+    process_2.kill()
+
+    process_1.join()
+    process_2.join()
+
+    print('live process 1 : ' + str(process_1.is_alive()))
+    print('live process 2 : ' + str(process_2.is_alive()))
+    ()
     print(round(end - start))
-    sys.exit()
+
 
 if __name__ == '__main__':
     main()
