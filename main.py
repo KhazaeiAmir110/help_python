@@ -1,21 +1,8 @@
-from multiprocessing import Process
-import time
-from concurrent.futures import ProcessPoolExecutor
+from multiprocessing import Pool
 
-
-start = time.perf_counter()
-def show(name):
-    print(f'Starting {name} ...')
-    time.sleep(2)
-    print(f'Ending {name} ...')
-
-end = time.perf_counter()
-def main():
-    with ProcessPoolExecutor(max_workers=2) as executor:
-        names = ['One', 'Two', 'Three', 'Four']
-        executor.map(show, names)
-    print(round(end - start))
-
-
+def f(x):
+    return x*x
+Pool()
 if __name__ == '__main__':
-    main()
+    with Pool(5) as p:
+        print(p.map(f, [1, 2, 3]))
