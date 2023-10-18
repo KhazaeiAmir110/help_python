@@ -1,5 +1,6 @@
 from multiprocessing import Process
 import time
+from concurrent.futures import ProcessPoolExecutor
 
 
 start = time.perf_counter()
@@ -10,24 +11,9 @@ def show(name):
 
 end = time.perf_counter()
 def main():
-    process_1 = Process(target=show, args=('One',))
-    process_2 = Process(target=show, args=('Two',))
-
-    process_1.start()
-    process_2.start()
-
-    print('live process 1 : ' + str(process_1.is_alive()))
-    print('live process 2 : ' + str(process_2.is_alive()))
-
-    process_1.kill()
-    process_2.kill()
-
-    process_1.join()
-    process_2.join()
-
-    print('live process 1 : ' + str(process_1.is_alive()))
-    print('live process 2 : ' + str(process_2.is_alive()))
-    ()
+    with ProcessPoolExecutor(max_workers=2) as executor:
+        names = ['One', 'Two', 'Three', 'Four']
+        executor.map(show, names)
     print(round(end - start))
 
 
