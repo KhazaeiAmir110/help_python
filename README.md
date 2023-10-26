@@ -7,6 +7,7 @@ I will also include Python mini-projects in this project.
 - working with Multi Processing
 - working with Multi Threading
 - mini project python
+- Solving Quora problems
 
 ## Installation and Setup
 1. First, make sure you have Python and Pipenv installed on your system.
