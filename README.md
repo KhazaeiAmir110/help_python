@@ -3,22 +3,39 @@ In this project,
 I plan to use the libraries that exist in Python in different branches of this project.
 I will also include Python mini-projects in this project.
 
-## Property's
-- working with Multi Processing
-- working with Multi Threading
-- mini project python
-
-## Installation and Setup
-1. First, make sure you have Python and Pipenv installed on your system.
-2. Install Pipenv by running the following command.
-3. Next, navigate to your project directory and create the Pipenv virtual environment and install project dependencies.
-4. Now, activate the Pipenv virtual environment and run your project scripts.
+## Help [Quera](https://quera.org/)
+In this branch, we are trying to solve some Quera issues.
 
 
-```bash
-$ pip install pipenv
-$ cd help_python
-$ pipenv install
-$ pipenv shell
-```
-Please note that these instructions serve as an example, and you should modify them based on your own project's requirements and settings. Additionally, if your project has specific dependency configurations, you can include those in the Pipfile and refer to it in the "Installation and Setup" section of your README.md file.
+## حل مسائل کوئرا
+در این برنچ سعی بر این داریم تا تعدادی از مسائل کوئرا را حل کنیم
+با زبان محبوب پایتون
+
+### مسائل
+1. فاکتوریل
+2. ام سین
+3. چاپ مربع
+4. صبا و سوال ساده
+5. شارژ موبایل
+6. تو چه قدر اضافه وزن داری؟
+7. صدگان خسته
+8. کامل بودن یا نبودن
+9. شطرنچ حرفه ای
+10. اعداد اول
+11. روز آزادی بیان در برره
+12. جدول ضرب گنده
+13. چاپ برعکس
+14. جمع اعداد
+15. مثلث خیام
+16. کلمه کلمه
+17. سوپ سبزیجات
+18. همایش زندگی بهتر
+19. تیم کشی
+20. دایره عجیب
+21. رژیم سخت
+22. بازگشت از بوستان
+23. اتاق فرار
+24. کاربر ناشی ماشین حساب
+25. آخ جون طرف نیست!
+26. هندونه خوری
+27. بدخواه پویان
