@@ -1,0 +1,10 @@
+Algorithm FCFS
+FCFS (First-Come, First-Served) is a scheduling algorithm that operates based on the order in which processes enter the system.
+In this algorithm, the process that arrives first in the system is given higher priority in execution and continues until its completion.
+As a result, if a process with a long execution time enters the system, subsequent processes have to wait for its completion.
+
+
+ یک الگوریتم برنامه‌ریزی است که بر اساس ترتیب ورود فرآیندها به سیستم عمل می‌کند.
+ در این الگوریتم، فرآیندی که اولین بار به سیستم وارد شده است،
+ اولویت بیشتری در اجرا دارد و تا زمان اتمام خود ادامه می‌یابد.
+ در نتیجه، اگر فرآیندی با زمان اجرای طولانی وارد سیستم شود، فرآیندهای بعدی باید منتظر اتمام آن باشند.
