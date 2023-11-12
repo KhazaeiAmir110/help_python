@@ -1,26 +1,40 @@
 import numpy as np
 
 """
-کار با متد های بیشتر numpy
-عملیات هایی که میتوانیم روی آرایه ها انجام دهیم
-part 2
+متد های دیگر numpy به غیر از array
 """
 
-array = np.array([
-    [10, 2, 3],
-    [42, 5, 6],
-    [73, 8, 9],
-    [102, 11, 12],
-    [1003, 200, 300]
-])
+# empty
+array = np.empty((3, 4), dtype=np.uint8)
+print(array)
 
-# sort array
-print(np.sort(array))
+# empty_like
+test_array = ([1, 2, 3], [4, 5, 6])
+array_1 = np.empty_like(test_array, shape=(3, 4), dtype=np.uint8)
+print(array_1)
 
-# copy and view
-array_2 = array.copy()  # new array
-array_3 = array.view()  # array => change name
+# eye => matrix I : n * m
+array_2 = np.eye(4, 5)
+array_3 = np.eye(4, 5, 1)
+print(array_2)
+print(array_3)
 
-# تشخیص copy , view
-print(array_2.base)  # None
-print(array_3.base)  # a
+# identity => matrix I : n * n
+array_4 = np.identity(5)
+print(array_4)
+
+# ones => matrix 1
+array_5 = np.ones((2, 3))
+print(array_5)
+
+# zeros => matrix 0
+array_6 = np.zeros((2, 3))
+print(array_6)
+
+# full => matrix n
+array_n = np.full((3, 3), 10)
+print(array_n)
+
+# arange => m => n
+array_arang = np.arange(10, 200)
+print(array_arang)
