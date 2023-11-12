@@ -7,25 +7,20 @@ part 2
 """
 
 array = np.array([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [10, 11, 12],
-    [100, 200, 300]
+    [10, 2, 3],
+    [42, 5, 6],
+    [73, 8, 9],
+    [102, 11, 12],
+    [1003, 200, 300]
 ])
 
-array_2 = np.array([[0, 0, 0]])
-array_3 = np.array([1, 1, 1, 1, 1])
-# چسباندن آرایه ها به هم
-# به پایین آرایه اضافه میکند
-print(np.vstack((array, array_2)))
-print('----------------------')
-# به سمت راست آرایه اضافه میکند
-print(np.hstack((array, array_3.reshape(5, 1))))
+# sort array
+print(np.sort(array))
 
-# method vstack and hstack
-print(np.concatenate((array, array_2), axis=0))
+# copy and view
+array_2 = array.copy()  # new array
+array_3 = array.view()  # array => change name
 
-# جداسازی array
-print(np.vsplit(array, 5))
-print(np.hsplit(array, 3))
+# تشخیص copy , view
+print(array_2.base)  # None
+print(array_3.base)  # a
