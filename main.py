@@ -14,23 +14,18 @@ array = np.array([
     [100, 200, 300]
 ])
 
-print(array)
+array_2 = np.array([[0, 0, 0]])
+array_3 = np.array([1, 1, 1, 1, 1])
+# چسباندن آرایه ها به هم
+# به پایین آرایه اضافه میکند
+print(np.vstack((array, array_2)))
+print('----------------------')
+# به سمت راست آرایه اضافه میکند
+print(np.hstack((array, array_3.reshape(5, 1))))
 
-# size array
-print('siz = ' + str(array.size))
+# method vstack and hstack
+print(np.concatenate((array, array_2), axis=0))
 
-print('n . m = ' + str(array.shape))
-# عوض کردن ساختار آرایه
-print('-----------------')
-print(array.reshape(5, 3))
-print(array.reshape(1, 15))
-print(array.reshape(15, 1))
-
-# item [n]
-print('itme[0] = ' + str(array[0]))
-# one
-print('itme[0][0] = ' + str(array[0][0]))
-# two
-print('itme[0, 0] = ' + str(array[0, 0]))
-# range
-print('itme[0:3] = ' + str(array[0:3]))
+# جداسازی array
+print(np.vsplit(array, 5))
+print(np.hsplit(array, 3))
