@@ -1,29 +1,19 @@
 import numpy as np
 
 """
-Input and output
+Masked arrays => filtering datas
 """
 
-array_test = np.array([
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8]
+array_1 = np.array([
+    [1, 2, 3],
+    [np.nan, 5, 6]
 ])
+# فیلتر اعداد منفی
+mask_array_1 = np.ma.masked_invalid(array_1)
+print(mask_array_1)
 
-# save
-np.save('output.npy', array_test)
-np.savetxt('output.txt', array_test)
 
-# load
-print(np.load('output.npy'))
+array_2 = np.arange(-10, 10)
+mask_array_2 = np.ma.masked_where(array_2 < 0 , array_2)
+print(mask_array_2)
 
-# ---------------------------------
-array_new = np.arange(10, 2000)
-
-np.savez('output.npz', array_new, array_test)
-
-load = np.load('output.npz')
-print(load)
-
-print(load['arr_0'])
-print(load['arr_1'])
