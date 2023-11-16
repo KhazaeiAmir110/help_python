@@ -1,18 +1,18 @@
 import numpy as np
 
 """
-random
+linspace => فاصله های دقیقا یکسان
+create matrix by array
 """
-random = np.random.default_rng()
-# int
-test_1 = random.integers(1,10,3)
-print(test_1)
+array = np.linspace(1,200,num=30, retstep=True)
+print(array)
 
-# float
-test_2 = random.random(3)
-print(test_2)
+# ------------------------------------
+array_1 = [1,2,3,4]
+array_2 = [5,6,7,8]
+array_3 = [9,10,11,12]
+array_4 = [13,14,15,16]
 
-# array
-array = np.array([2,3,4,5,6,7,8])
-test_3 = random.choice(array,2,p=[0.3,0,0,0.4,0,0,0.3])
-print(test_3)
+array_new = np.meshgrid(array_1,array_2,array_3,array_4)
+# تمام ترکیبات بین 4 آرایه
+print(array_new)
