@@ -4,11 +4,16 @@ from kivy.uix.gridlayout import GridLayout
 
 
 class MyGridLayout(GridLayout):
-	pass
+	def calc(self,event):
+		if event : #3/0
+			try:
+				self.display.text = str(eval(event))
+			except:
+				self.disabled.text = 'ERROR'
 
 class CalculatorApp(App):
 	def build(self):
-		pass
+		return MyGridLayout()
 
 if __name__ == '__main__':
 	CalculatorApp().run()
