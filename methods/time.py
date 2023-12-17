@@ -44,24 +44,32 @@
 # # process_time => cpu
 # print(time.process_time())
 
+#
+# import  datetime
+#
+# time_1 = datetime.time(5,4,3)
+# print(time_1)
+# """
+# Arguments:
+#
+#         hour, minute (required)
+#         second, microsecond (default to zero)
+#         tzinfo (default to None)
+#         fold (keyword only, default to zero)
+#         """
+#
+# print(datetime.date(2024, 5,3))
+# """
+# Arguments:
+#
+#         year, month, day (required, base 1)
+# """
 
-import  datetime
 
-time_1 = datetime.time(5,4,3)
-print(time_1)
-"""
-Arguments:
+import calendar
 
-        hour, minute (required)
-        second, microsecond (default to zero)
-        tzinfo (default to None)
-        fold (keyword only, default to zero)
-        """
+print(calendar.month(2024, 5))
+"""Return a month's calendar string"""
 
-print(datetime.date(2024, 5,3))
-"""
-Arguments:
-
-        year, month, day (required, base 1)
-"""
-
+print(calendar.calendar(2024))
+"""Returns a year's calendar as a multi-line string"""
