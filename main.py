@@ -1,16 +1,18 @@
-# This is a sample Python script.
+class Person:
+    __name = None
+    age = None
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def get_name(self):
+        return self.__name
+    def set_name(self, name):
+        self.__name = name
 
+    def get_person(self):
+        property(get_person)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+person = Person()
+person.set_name("amir")
+pe = Person()
+print(pe.name)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(person.get_name())
