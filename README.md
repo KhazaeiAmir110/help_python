@@ -6,6 +6,7 @@ I will also include Python mini-projects in this project.
 ## Property's
 - working with Multi Processing
 - working with Multi Threading
+- working with Design Patterns
 - mini project python
 - Solving Quora problems
 
