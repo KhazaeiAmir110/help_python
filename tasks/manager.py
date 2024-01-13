@@ -52,3 +52,30 @@ class User:
         for key, value in kwargs.items():
             setattr(self, key, value)
         self.objects.append(self)
+
+
+if __name__ == '__main__':
+    user1 = User(name='ali', age=2)
+
+    user2 = User(name='ali2', age=2)
+
+    user3 = User(name='ali3', age=3)
+
+    user4 = User(name='ali4', age=4)
+
+    user5 = User(name='ali5', age=5)
+
+    # user = User.objects.filter(age=2)
+    # for u in user:
+    #     print(vars(u))
+    # User.objects.createUser(name='ali', age=1)
+    #
+    # user = User.objects.get(age=1)
+    # print(user)
+
+
+    print(User.objects.deleteUser(age=2))
+    print("_------------------")
+    User.objects.list()
+
+
