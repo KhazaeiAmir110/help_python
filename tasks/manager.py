@@ -41,6 +41,17 @@ class UserManager:
         else:
             return vars(get_list[0])
 
+
+    def update(self, *args, **kwargs):
+        for _user in self.users:
+            for key, value in kwargs.items():
+                if getattr(_user, key) == value:
+                    setattr(_user,key, value)
+                    # self.users.remove(_user)
+                    # User.objects.create(*args, **kwargs)
+                    # return True
+
+
     def list(self):
         for _ in self.users:
             print(vars(_))
@@ -58,6 +69,11 @@ if __name__ == '__main__':
     user1 = User(name='ali', age=2)
 
     user2 = User(name='ali2', age=2)
+    # User.objects.get(name='ali')
+    # User.objects.filter(name='a', age=2)
+    us = User.objects.update(name='ali', age=23)
+    print(us)
+    User.objects.list()
 
     user3 = User(name='ali3', age=3)
 
@@ -65,7 +81,7 @@ if __name__ == '__main__':
 
     user5 = User(name='ali5', age=5)
 
-    # user = User.objects.filter(age=2)
+    user = User.objects.filter(age=2)
     # for u in user:
     #     print(vars(u))
     # User.objects.createUser(name='ali', age=1)
@@ -74,8 +90,8 @@ if __name__ == '__main__':
     # print(user)
 
 
-    print(User.objects.deleteUser(age=2))
-    print("_------------------")
-    User.objects.list()
+    # print(User.objects.delete(age=2))
+    # print("_------------------")
+    # User.objects.list()
 
 
