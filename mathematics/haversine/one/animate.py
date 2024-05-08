@@ -40,6 +40,6 @@ class Animate:
         ani.save('point_ani.gif', writer='blue')
         plt.show()
 
-#p1=Animate(40.7128,-74.0060,51.5072,-0.1276)
-#p1.start()
+# p1=Animate(40.7128,-74.0060,51.5072,-0.1276)
+# p1.start()
 #####(40.7128,-74.0060,51.5072,-0.1276) new york to london
