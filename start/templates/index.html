@@ -15,4 +15,8 @@
         {% endfor %}
 
     </div>
+
+    <div>
+        sum age dics : {{ dict | sum(attribute = 'age') }}
+    </div>
 {% endblock %}
