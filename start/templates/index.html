@@ -11,9 +11,11 @@
     <div>
         {% for item in dict %}
         	<h3>{{ item.name|capitalize }}</h3>
-            <h4>{{ item.age | abs }}</h4>
+            <h4>{{ item.age }}</h4>
         {% endfor %}
 
+        <p>{{ text | center(4) }}</p>
+        {{ my_variable|default('my_variable is not defined') }}
     </div>
 
     <div>

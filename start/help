@@ -2,4 +2,10 @@
 
 1) abs : Return the absolute value of the argument.
 
-2)
+2) batch : A filter that batches items.
+
+3) capitalize : The first character will be uppercase, all others lowercase.
+
+4) center :
+
+5) default :
