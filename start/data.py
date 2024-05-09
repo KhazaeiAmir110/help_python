@@ -9,15 +9,6 @@ class Person:
         self.birthday = kwargs['birthday']
         self.gender = kwargs['gender']
 
-        def getter(self, *args):
-            if hasattr(self,args):
-                return getattr(self,args)
-            else:
-                raise AttributeError(f'Argument {args} does not exist!!!')
-
-        def get(self):
-            return self.name
-
 person_1 = Person(name="amir", family='df', age=20, email="<EMAIL>", phone="02442424242", address="sdfsdfsddff", birthday="dfd", gender="female")
 person_2 = Person(name="alice", family='df', age=20, email="<EMAIL>", phone="02442424242", address="sdfsdfsdf", birthday="sdfd", gender="female")
 
