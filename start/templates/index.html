@@ -6,12 +6,12 @@
 
 
 {% block inner %}
-    <h1>Hellow {{name}} {{age}}</h1>
+    <h1>Hellow {{name|capitalize}} {{age}}</h1>
     <p>list[0] : {{list[0]}}</p>
 
     <div>
         {% for item in dict %}
-        	<h3>{{ item.name }}</h3>
+        	<h3>{{ item.name|capitalize }}</h3>
             <h4>{{ item.age }}</h4>
         {% endfor %}
 
