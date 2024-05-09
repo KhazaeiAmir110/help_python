@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block inner %}
     <h1>Hellow {{name}} {{age}}</h1>
     <p>list[0] : {{list[0]}}</p>
 
@@ -15,5 +11,4 @@
         {% endfor %}
 
     </div>
-</body>
-</html>
+{% endblock %}
