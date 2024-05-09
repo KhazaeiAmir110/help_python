@@ -11,7 +11,7 @@
     <div>
         {% for item in dict %}
         	<h3>{{ item.name|capitalize }}</h3>
-            <h4>{{ item.age }}</h4>
+            <h4>{{ item.age | abs }}</h4>
         {% endfor %}
 
     </div>
