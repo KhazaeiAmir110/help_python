@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 
+# Abstract class
 class Base(ABC):
 
     @abstractmethod
@@ -11,6 +12,9 @@ class Base(ABC):
     def transfer(self):
         pass
 
+    def disconnect(self):
+        self.disconnect()
+
 
 class Concrete(Base):
     def connect(self):
@@ -18,6 +22,20 @@ class Concrete(Base):
 
     def transfer(self):
         print('transfer')
+
+
+# Interface
+class Interface(ABC):
+    def connect(self):
+        pass
+
+    def transfer(self):
+        pass
+
+
+class ConcreteInterface(Interface):
+    def connect(self):
+        print('connect')
 
 
 # Encapsulation
