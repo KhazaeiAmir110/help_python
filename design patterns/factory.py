@@ -6,6 +6,7 @@ from abc import ABC, abstractmethod
 
 
 # Example 1
+# creator
 class File(ABC):
     def __init__(self, file):
         self.file = file
@@ -18,6 +19,7 @@ class File(ABC):
         return self.make().edit(self.file)
 
 
+# Product
 class Json:
     def edit(self, file):
         return f"Working show this {file} JSON..."
@@ -47,7 +49,7 @@ class YAMLFile(File):
     def make(self):
         return YAML()
 
-
+# clint
 def client_file(file, format):
     formats = {
         "json": JsonFile,
