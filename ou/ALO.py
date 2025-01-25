@@ -1,17 +1,3 @@
-# coding:utf-8
-"""
-作者：zhaoxingfeng	日期：2016.12.02
-功能：蚁狮优化算法，Ant Lion Optimizer（ALO）
-版本：2.0
-参考文献:
-[1]Seyedali Mirjalili.The Ant Lion Optimizer[J].ADVANCES IN ENGINEERING SOFTWARE, 2015, 83, 80-98.
-[2]Verma, S. Mukherjee, V.Optimal real power rescheduling of generators for congestion management
-   using a novel ant lion optimiser[J].ENGINEERING, ELECTRICAL & ELECTRONIC,2016,7,2548-2561.
-[3]崔东文, 王宗斌. 基于ALO-ENN算法的洪灾评估模型及应［J].人民珠江, 2016, 37(5): 44-50.
-说明：
-2015年被人提出来的一种仿生优化算法，Ant Lion Optimizer即蚁狮优化算法，具有全局优化、调节参数少、收敛精度高、鲁棒性
-好的优点，已被应用到SVM、Elman神经网络、GM(1,1)以及螺旋桨页面曲线参数寻优等场合。
-"""
 from __future__ import division
 import numpy as np
 import random
@@ -22,13 +8,6 @@ import time
 
 class ALO(object):
     def __init__(self, N, Max_iter, lb, ub, dim, Fobj):
-        """
-        N：蚂蚁和蚁狮规模，蚂蚁和蚁狮数量相等
-        Max_iter：最大迭代次数
-        lb, ub ：搜索范围 -> 变量取值范围
-        dim：解的维度
-        Fobj：价值函数
-        """
         self.N = N
         self.Max_iter = Max_iter
         self.lb = np.array(lb)
@@ -36,7 +15,7 @@ class ALO(object):
         self.dim = dim
         self.Fobj = Fobj
 
-    # 初始化 ant 和 antlion 位置
+    #  ant & antlion
     def Initialization(self):
         x = [[0 for col in range(self.dim)] for row in range(self.N)]
         for i in range(self.N):
@@ -195,14 +174,13 @@ class ALO(object):
 
 
 if __name__ == "__main__":
-    # 价值函数
     def Fobj(x):
         cost = (x[0] - 1) ** 2 + (x[1] + 1) ** 2 + x[2] ** 2 + x[3] ** 2
         return cost
 
 
     starttime = time.time()
-    a = ALO(10, 80, [-1, -1, -1, -1], [1, 1, 1, 1], 4, Fobj)
+    a = ALO(100, 500, [-10, -10, -10, -10], [10, 10, 10, 10], 4, Fobj)
     Best_score, Best_pos, Cg_curve = a.Run()
     endtime = time.time()
     print("Runtime = " + str(endtime - starttime))
