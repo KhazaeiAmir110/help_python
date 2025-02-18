@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+celery = "==5.4.0"
 
 [dev-packages]
 
