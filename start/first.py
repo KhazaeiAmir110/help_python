@@ -2,10 +2,10 @@ import time
 
 from celery import Celery
 
-app = Celery(main='tasks', broker='amqp://guest:guest@localhost:5672/')
+app = Celery(main='first', broker='amqp://guest:guest@localhost:5672/')
 
 
-@app.task(name='first.adding')
+@app.task
 def add(a, b):
     time.sleep(20)
     return a + b

@@ -1,6 +1,6 @@
 from celery import Celery
 
-app = Celery('keep-result', broker='amqp://guest:guest@localhost:5672/', backend='rpc://')
+app = Celery('keep_result', broker='amqp://guest:guest@localhost:5672/', backend='rpc://')
 
 app.config_from_object('celery_config')
 
