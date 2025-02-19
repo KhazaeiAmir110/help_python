@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 celery = "==5.4.0"
+flower = "==2.0.1"
 
 [dev-packages]
 
